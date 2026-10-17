@@ -1,0 +1,22 @@
+:root {
+  --font-base: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  --radius-btn: 9999px;
+  --radius-card: 20px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--font-base); line-height: 1.6; }
+.demo-container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.demo-nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
+.demo-brand { font-size: 1.25rem; font-weight: 800; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+.demo-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: var(--radius-btn); font-weight: 700; text-decoration: none; cursor: pointer; border: none; }
+.demo-hero { padding: 80px 0 60px; text-align: center; }
+.demo-tag { display: inline-block; padding: 4px 14px; border-radius: var(--radius-btn); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 16px; }
+.demo-title { font-size: 2.8rem; font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+.demo-subtitle { font-size: 1.15rem; max-width: 620px; margin: 0 auto 30px; }
+.demo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 40px 0; }
+.demo-card { border-radius: var(--radius-card); padding: 30px; text-align: left; }
+.demo-footer { padding: 40px 0; text-align: center; font-size: 0.9rem; }
+@media (max-width: 800px) {
+  .demo-title { font-size: 2rem; }
+  .demo-grid { grid-template-columns: 1fr; }
+}

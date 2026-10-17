@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>project web | design e desenvolvimento web</title>
+  <meta name="description" content="Project Web - Sites e plataformas com alta performance, fidelidade visual e segurança.">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo">
+        <div class="logo-badge">
+          <img src="logo.png" alt="project web logo">
+        </div>
+        <div class="logo-info">
+          <span class="logo-title">project <span>web</span></span>
+          <span class="logo-sub">design e desenvolvimento web</span>
+        </div>
+      </a>
+
+      <nav class="nav-pill-group" id="navMenu">
+        <a href="#solucoes">Soluções</a>
+        <a href="#metodologia">Como Trabalhamos</a>
+        <a href="#compromisso">Sobre Nós</a>
+        <a href="#sites-reais">Portfólio</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#contato" class="btn btn-lime mobile-only">Iniciar Projeto</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#contato" class="btn btn-glass desktop-only">
+          <span>Iniciar Projeto</span>
+          <i data-lucide="arrow-up-right"></i>
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir Menu">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-flux-section">
+      <div class="hero-flux-bg"></div>
+      <div class="flux-vertical-lines">
+        <div class="v-line"></div>
+        <div class="v-line"></div>
+        <div class="v-line"></div>
+        <div class="v-line"></div>
+        <div class="v-line"></div>
+      </div>
+
+      <div class="container hero-flux-container">
+        <div class="hero-left-column">
+          <div class="hero-tag-pill">
+            <span class="tag-icon-circle"><i data-lucide="shield-check" style="width: 14px; height: 14px;"></i></span>
+            <span>Design com Fidelidade 100% & Blindagem Digital</span>
+          </div>
+
+          <h1 class="hero-big-title">
+            Sites Profissionais Que <br>
+            <span class="text-lime">Protegem e Valorizam</span> <br>
+            <span class="italic-accent">a Sua Marca</span>
+          </h1>
+
+          <p class="hero-flux-desc">
+            Desenvolvemos seu site com rigor milimétrico à sua identidade visual, carregamento ultrarrápido e proteção corporativa contra vírus e falhas. Seu negócio com a presença digital que transmite credibilidade imediata.
+          </p>
+
+          <div class="hero-cta-row">
+            <a href="#contato" class="btn-flux-primary">
+              <span>Construir Meu Site</span>
+              <span class="btn-flux-arrow">
+                <i data-lucide="arrow-up-right"></i>
+              </span>
+            </a>
+
+            <div class="clients-badge">
+              <div class="avatar-stack">
+                <div class="avatar-mini av-1">PW</div>
+                <div class="avatar-mini av-2">RC</div>
+                <div class="avatar-mini av-3">LV</div>
+              </div>
+              <div class="clients-badge-text">
+                <strong>+120 Empresas Atendidas</strong>
+                <span>Sites 100% ativos e seguros</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-flux-stats">
+            <div class="flux-stat-card">
+              <div class="stat-head">
+                <span class="stat-val">100%</span>
+                <span class="stat-symbol">✓</span>
+              </div>
+              <span class="stat-sub">Fidelidade ao Layout</span>
+            </div>
+
+            <div class="flux-stat-card">
+              <div class="stat-head">
+                <span class="stat-val">Zero</span>
+                <span class="stat-symbol">Brechas</span>
+              </div>
+              <span class="stat-sub">Proteção SSL & LGPD</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-right-column">
+          <div class="floating-impact-card">
+            <div class="impact-header">
+              <span class="impact-badge">Alta Performance</span>
+              <div class="impact-bars">
+                <div class="bar b-1"></div>
+                <div class="bar b-2"></div>
+                <div class="bar b-3"></div>
+                <div class="bar b-4"></div>
+              </div>
+            </div>
+            <h4>Resultado Sem Surpresas</h4>
+            <p>O que é apresentado no projeto é exatamente o que entra no ar. Seu site carrega em milissegundos no celular e converte visitantes em clientes fiéis.</p>
+            <div class="impact-indicator">
+              <i data-lucide="shield-check" class="text-lime" style="width: 16px; height: 16px;"></i>
+              <span>Garantia de Entrega & Segurança Ativa</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <canvas id="interactiveFluidCanvas"></canvas>
+
+    <section id="sites-reais" class="arc-showcase-section">
+      <div class="container arc-wrapper">
+        <div class="arc-carousel" id="arcCarousel">
+          <a href="exemplos/saude.html" target="_blank" rel="noopener noreferrer" class="arc-item" data-slot="1" style="top: 290px; left: 30px; transform: rotate(-36deg);">
+            <img src="" alt="Saúde & Odontologia" id="arc-img-1">
+            <div class="slot-placeholder">
+              <i data-lucide="smile"></i>
+              <span>Saúde</span>
+            </div>
+            <span class="item-tooltip">Ver Consultório Odonto ↗</span>
+          </a>
+
+          <a href="exemplos/advocacia.html" target="_blank" rel="noopener noreferrer" class="arc-item" data-slot="2" style="top: 195px; left: 110px; transform: rotate(-28deg);">
+            <img src="" alt="Advocacia" id="arc-img-2">
+            <div class="slot-placeholder">
+              <i data-lucide="scale"></i>
+              <span>Direito</span>
+            </div>
+            <span class="item-tooltip">Ver Advocacia & Consultoria ↗</span>
+          </a>
+
+          <a href="exemplos/gastronomia.html" target="_blank" rel="noopener noreferrer" class="arc-item" data-slot="3" style="top: 115px; left: 215px; transform: rotate(-20deg);">
+            <img src="" alt="Gastronomia & Café" id="arc-img-3">
+            <div class="slot-placeholder">
+              <i data-lucide="coffee"></i>
+              <span>Cafeteria</span>
+            </div>
+            <span class="item-tooltip">Ver Cafeteria Artesanal ↗</span>
+          </a>
+
+          <a href="exemplos/imoveis.html" target="_blank" rel="noopener noreferrer" class="arc-item" data-slot="4" style="top: 55px; left: 335px; transform: rotate(-12deg);">
+            <img src="" alt="Imóveis" id="arc-img-4">
+            <div class="slot-placeholder">
+              <i data-lucide="building"></i>
+              <span>Imóveis</span>
+            </div>
+            <span class="item-tooltip">Ver Imobiliária ↗</span>
+          </a>
+
+          <a href="exemplos/fitness.html" target="_blank" rel="noopener noreferrer" class="arc-item" data-slot="5" style="top: 25px; left: 475px; transform: rotate(0deg);">
+            <img src="" alt="Fitness & Saúde" id="arc-img-5">
+            <div class="slot-placeholder">
+              <i data-lucide="activity"></i>
+              <span>Fitness</span>
+            </div>
+            <span class="item-tooltip">Ver Academia & Clube Fit ↗</span>
+          </a>
+
+          <a href="exemplos/estetica.html" target="_blank" rel="noopener noreferrer" class="arc-item" data-slot="6" style="top: 55px; left: 615px; transform: rotate(12deg);">
+            <img src="" alt="Estética & Beleza" id="arc-img-6">
+            <div class="slot-placeholder">
+              <i data-lucide="sparkles"></i>
+              <span>Estética</span>
+            </div>
+            <span class="item-tooltip">Ver Clínica de Estética ↗</span>
+          </a>
+
+          <a href="exemplos/veterinaria.html" target="_blank" rel="noopener noreferrer" class="arc-item" data-slot="7" style="top: 115px; left: 735px; transform: rotate(20deg);">
+            <img src="" alt="Veterinária & Pet" id="arc-img-7">
+            <div class="slot-placeholder">
+              <i data-lucide="dog"></i>
+              <span>Pet Care</span>
+            </div>
+            <span class="item-tooltip">Ver Veterinária & Pet ↗</span>
+          </a>
+
+          <a href="exemplos/construcao.html" target="_blank" rel="noopener noreferrer" class="arc-item" data-slot="8" style="top: 195px; left: 840px; transform: rotate(28deg);">
+            <img src="" alt="Construção Civil" id="arc-img-8">
+            <div class="slot-placeholder">
+              <i data-lucide="hammer"></i>
+              <span>Reformas</span>
+            </div>
+            <span class="item-tooltip">Ver Engenharia & Reformas ↗</span>
+          </a>
+
+          <a href="exemplos/solar.html" target="_blank" rel="noopener noreferrer" class="arc-item" data-slot="9" style="top: 290px; left: 920px; transform: rotate(36deg);">
+            <img src="" alt="Energia Solar" id="arc-img-9">
+            <div class="slot-placeholder">
+              <i data-lucide="sun"></i>
+              <span>Solar</span>
+            </div>
+            <span class="item-tooltip">Ver Energia Solar ↗</span>
+          </a>
+        </div>
+
+        <div class="arc-center-content">
+          <div class="arc-tag">
+            <i data-lucide="sparkles" style="width: 14px; height: 14px;"></i>
+            <span>PORTFÓLIO AO VIVO</span>
+          </div>
+          <h2 class="arc-title">Carregado de <span class="text-lime">Inovação Real</span></h2>
+          <p class="arc-desc">
+            Explore projetos entregues que estão operando neste exato momento na internet. Clique em qualquer um dos sites acima para visitá-lo e comprovar a velocidade e fidelidade.
+          </p>
+          <a href="#contato" class="btn-arc-cta">
+            <span>Quero um Site Neste Padrão</span>
+            <i data-lucide="arrow-up-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="compromisso" class="section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">POR QUE A PROJECT WEB</span>
+          <h2 class="section-title">O que nos torna o parceiro mais seguro para seu site</h2>
+          <p class="section-desc">Eliminamos as frustrações comuns de projetos web: atrasos, páginas diferentes do esperado e sites vulneráveis a falhas.</p>
+        </div>
+
+        <div class="pillars-grid">
+          <div class="pillar-card pillar-featured">
+            <div class="card-icon">
+              <i data-lucide="layout-grid"></i>
+            </div>
+            <h3>Fidelidade Visual Absoluta</h3>
+            <p>O que você aprova é o que vai ao ar. Preservamos sua marca, cores, tipografia e espaçamentos com perfeição em telas de computador, tablets e smartphones.</p>
+            <ul class="check-list">
+              <li><i data-lucide="check"></i> 100% fiel à identidade visual aprovada</li>
+              <li><i data-lucide="check"></i> Adaptação perfeita para qualquer celular</li>
+              <li><i data-lucide="check"></i> Visual limpo, profissional e moderno</li>
+            </ul>
+          </div>
+
+          <div class="pillar-card">
+            <div class="card-icon">
+              <i data-lucide="shield-check"></i>
+            </div>
+            <h3>Segurança & Estabilidade Real</h3>
+            <p>Seu site protegido contra vírus, tentativas de invasão e quedas inesperadas. Tudo configurado dentro das melhores práticas e das leis de privacidade de dados.</p>
+            <ul class="check-list">
+              <li><i data-lucide="check"></i> Certificado de Segurança SSL (Cadeado Ativo)</li>
+              <li><i data-lucide="check"></i> Proteção de dados e conformidade LGPD</li>
+              <li><i data-lucide="check"></i> Backups automáticos para nunca perder dados</li>
+            </ul>
+          </div>
+
+          <div class="pillar-card">
+            <div class="card-icon">
+              <i data-lucide="headphones"></i>
+            </div>
+            <h3>Suporte Dedicado & Sem Jargões</h3>
+            <p>Explicamos cada etapa de forma clara e acessível para qualquer pessoa. Você tem contato direto com quem está criando o seu projeto, do início ao pós-lançamento.</p>
+            <ul class="check-list">
+              <li><i data-lucide="check"></i> Atendimento direto via WhatsApp e e-mail</li>
+              <li><i data-lucide="check"></i> Treinamento simples para atualizar seu conteúdo</li>
+              <li><i data-lucide="check"></i> Garantia pós-entrega com suporte contínuo</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="solucoes" class="section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">NOSSAS SOLUÇÕES</span>
+          <h2 class="section-title">Desenvolvido sob medida para seu objetivo</h2>
+          <p class="section-desc">Seja para conquistar novos clientes, apresentar sua empresa ou vender online, temos o formato perfeito.</p>
+        </div>
+
+        <div class="solutions-grid">
+          <div class="solution-box">
+            <div class="solution-head">
+              <i data-lucide="mouse-pointer-click" class="sol-icon"></i>
+              <span class="sol-num">01</span>
+            </div>
+            <h4>Landing Pages de Alta Conversão</h4>
+            <p>Páginas com estrutura pensada para direcionar anúncios (Google e Instagram) e transformar cliques em mensagens diretas no WhatsApp e pedidos de orçamento.</p>
+            <span class="solution-tag">Para Vendas Rápidas & Anúncios</span>
+          </div>
+
+          <div class="solution-box">
+            <div class="solution-head">
+              <i data-lucide="briefcase" class="sol-icon"></i>
+              <span class="sol-num">02</span>
+            </div>
+            <h4>Sites Institucionais e Corporativos</h4>
+            <p>A presença digital definitiva para transmitir credibilidade imediata aos seus clientes, parceiros e investidores, fortalecendo sua autoridade no mercado.</p>
+            <span class="solution-tag">Para Empresas & Profissionais</span>
+          </div>
+
+          <div class="solution-box">
+            <div class="solution-head">
+              <i data-lucide="shopping-cart" class="sol-icon"></i>
+              <span class="sol-num">03</span>
+            </div>
+            <h4>Lojas Virtuais com Pagamento Seguro</h4>
+            <p>Catálogos e e-commerces intuitivos, integrados aos melhores meios de pagamento do Brasil (Pix, Cartão, Boleto) com proteção antifraude.</p>
+            <span class="solution-tag">Vendas Online Descomplicadas</span>
+          </div>
+
+          <div class="solution-box">
+            <div class="solution-head">
+              <i data-lucide="refresh-cw" class="sol-icon"></i>
+              <span class="sol-num">04</span>
+            </div>
+            <h4>Redesign & Blindagem de Sites Antigos</h4>
+            <p>Seu site atual é lento, antigo ou está sem segurança? Modernizamos a identidade visual mantendo tudo o que você já conquistou, com código rápido e seguro.</p>
+            <span class="solution-tag">Modernização & Repaginação</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section id="metodologia" class="section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">COMO FUNCIONA</span>
+          <h2 class="section-title">O passo a passo simples do seu novo site</h2>
+          <p class="section-desc">Você acompanha cada evolução com clareza, sabendo exatamente o que esperar em cada etapa.</p>
+        </div>
+
+        <div class="steps-container">
+          <div class="method-card">
+            <div class="step-label">Etapa 01</div>
+            <div class="step-ico"><i data-lucide="message-square"></i></div>
+            <h4>Alinhamento & Entendimento</h4>
+            <p>Conversamos para entender o seu público, seus objetivos comerciais e tudo o que seu site precisa ter.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="step-label">Etapa 02</div>
+            <div class="step-ico"><i data-lucide="palette"></i></div>
+            <h4>Apresentação Visual</h4>
+            <p>Criamos o design completo do site para você aprovar antes de programar, garantindo que tudo fique ao seu gosto.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="step-label">Etapa 03</div>
+            <div class="step-ico"><i data-lucide="code-2"></i></div>
+            <h4>Desenvolvimento & Blindagem</h4>
+            <p>Programamos o site exatamente como aprovado, aplicando todas as proteções de segurança e testes em celulares.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="step-label">Etapa 04</div>
+            <div class="step-ico"><i data-lucide="globe"></i></div>
+            <h4>Publicação & Apoio Contínuo</h4>
+            <p>Colocamos seu site no ar com endereço próprio, e-mails corporativos e suporte sempre que precisar.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="depoimentos" class="section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">QUEM JÁ CONTRATOU</span>
+          <h2 class="section-title">A tranquilidade de quem escolheu a Project Web</h2>
+        </div>
+
+        <div class="reviews-grid">
+          <div class="review-box">
+            <div class="review-stars">
+              <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+            </div>
+            <p class="review-text">
+              "Minha maior preocupação era aprovar um modelo bonito e o site real ficar torto ou diferente. A equipe da Project Web entregou exatamente cada detalhe. Ficou impecável e passa muita confiança para quem acessa."
+            </p>
+            <div class="client-profile">
+              <div class="client-avatar">RC</div>
+              <div>
+                <strong>Roberto Castanheira</strong>
+                <span>Diretor Comercial</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-box">
+            <div class="review-stars">
+              <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+            </div>
+            <p class="review-text">
+              "Eu não entendo de programação nem de termos difíceis. Eles me explicaram tudo de forma simples, resolveram toda a parte de segurança e hoje recebo mensagens de clientes pelo WhatsApp todos os dias."
+            </p>
+            <div class="client-profile">
+              <div class="client-avatar">CF</div>
+              <div>
+                <strong>Carla Figueiredo</strong>
+                <span>Proprietária de Negócio Local</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-box">
+            <div class="review-stars">
+              <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+            </div>
+            <p class="review-text">
+              "Velocidade e estabilidade para nós são essenciais. O site nunca saiu do ar, carrega num piscar de olhos no celular e já se pagou logo no primeiro mês com o aumento nas vendas."
+            </p>
+            <div class="client-profile">
+              <div class="client-avatar">MA</div>
+              <div>
+                <strong>Marcos Alencar</strong>
+                <span>Gerente de Operações</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="section">
+      <div class="container contact-wrapper">
+        <div class="contact-pitch">
+          <span class="section-tag">VAMOS COMEÇAR?</span>
+          <h2 class="section-title">Dê à sua empresa o site profissional que ela merece</h2>
+          <p class="section-desc">
+            Conte-nos sobre o que você deseja realizar. Faremos uma análise sem compromisso e apresentaremos uma proposta clara e justa para o seu negócio.
+          </p>
+
+          <div class="guarantee-badges">
+            <div class="badge-item">
+              <div class="badge-ico"><i data-lucide="shield-check"></i></div>
+              <div>
+                <strong>Garantia de Fidelidade ao Layout</strong>
+                <p>Se o site final não for idêntico ao protótipo que você aprovou, ajustamos até você ficar 100% satisfeito.</p>
+              </div>
+            </div>
+
+            <div class="badge-item">
+              <div class="badge-ico"><i data-lucide="lock"></i></div>
+              <div>
+                <strong>Segurança & Proteção de Dados</strong>
+                <p>Seus dados, materiais e informações comerciais são protegidos com sigilo profissional absoluto.</p>
+              </div>
+            </div>
+
+            <div class="badge-item">
+              <div class="badge-ico"><i data-lucide="clock"></i></div>
+              <div>
+                <strong>Resposta Rápida e Transparente</strong>
+                <p>Retornamos sua solicitação em até 4 horas em dias úteis com um atendimento atencioso.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="direct-channels">
+            <a href="mailto:contato@projectweb.com.br" class="channel-btn">
+              <i data-lucide="mail"></i> contato@projectweb.com.br
+            </a>
+            <a href="https://wa.me/5511999999999" target="_blank" class="channel-btn">
+              <i data-lucide="message-circle"></i> Conversar no WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <h3 class="form-headline">Solicitar Proposta Gratuita</h3>
+          
+          <form id="quoteForm">
+            <div class="field-group">
+              <label for="clientName">Seu Nome ou da sua Empresa</label>
+              <input type="text" id="clientName" required placeholder="Ex: Ana Maria / Souza Consultoria">
+            </div>
+
+            <div class="field-group">
+              <label for="clientContact">E-mail ou WhatsApp para Retorno</label>
+              <input type="text" id="clientContact" required placeholder="Ex: (11) 98765-4321 ou ana@empresa.com">
+            </div>
+
+            <div class="field-group">
+              <label for="projectType">Do que você precisa?</label>
+              <select id="projectType" required>
+                <option value="" disabled selected>Selecione uma opção</option>
+                <option value="landing">Página de Vendas / Landing Page</option>
+                <option value="institucional">Site Completo para minha Empresa</option>
+                <option value="loja">Loja Virtual / Catálogo Online</option>
+                <option value="redesign">Modernizar meu Site Atual</option>
+                <option value="duvidas">Ainda não sei, quero orientações</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="projectDetails">Conte brevemente sobre sua ideia ou objetivo</label>
+              <textarea id="projectDetails" rows="4" placeholder="Ex: Quero um site para divulgar meus serviços e receber mensagens de clientes no WhatsApp..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-lime btn-block" id="submitBtn">
+              <span id="btnLabel">Enviar Pedido de Proposta</span>
+              <i data-lucide="send"></i>
+            </button>
+            <div class="form-notice" id="formNotice"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-top">
+      <div class="footer-brand-area">
+        <a href="#" class="brand-logo">
+          <div class="logo-badge">
+            <img src="logo.png" alt="project web logo">
+          </div>
+          <div class="logo-info">
+            <span class="logo-title">project <span>web</span></span>
+            <span class="logo-sub">design e desenvolvimento web</span>
+          </div>
+        </a>
+        <p>Desenvolvemos sites profissionais que unem visual sofisticado, carregamento veloz e a segurança que seu negócio precisa para crescer com confiança.</p>
+        <div class="security-tag">
+          <i data-lucide="shield-check"></i> Sites Seguros com Garantia de Fidelidade
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>Navegação</h5>
+        <ul>
+          <li><a href="#solucoes">Soluções</a></li>
+          <li><a href="#compromisso">Nossos Diferenciais</a></li>
+          <li><a href="#portfolio">Projetos Realizados</a></li>
+          <li><a href="#metodologia">Como Trabalhamos</a></li>
+          <li><a href="#depoimentos">Avaliações</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Compromisso & Confiança</h5>
+        <ul>
+          <li><a href="#contato">Garantia de Fidelidade 100%</a></li>
+          <li><a href="#compromisso">Proteção de Dados & LGPD</a></li>
+          <li><a href="#compromisso">Backups & Certificado SSL</a></li>
+          <li><a href="#contato">Atendimento Direto</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div class="container footer-legal">
+        <p>&copy; 2026 project web • design e desenvolvimento web. Todos os direitos reservados.</p>
+        <div class="system-status">
+          <span class="status-dot"></span> Todos os serviços seguros e operacionais
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
