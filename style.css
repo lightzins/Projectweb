@@ -1269,10 +1269,12 @@ body {
   color: #facc15;
   margin-bottom: 18px;
 }
-.review-stars i {
+.review-stars i,
+.review-stars svg {
   width: 18px;
   height: 18px;
   fill: #facc15;
+  stroke: #facc15;
 }
 
 .review-text {
