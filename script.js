@@ -65,6 +65,20 @@ document.addEventListener('DOMContentLoaded', () => {
       submitBtn.disabled = true;
 
       setTimeout(() => {
+        const proposalData = {
+          id: Date.now(),
+          date: new Date().toLocaleString('pt-BR'),
+          name,
+          contact,
+          projectType,
+          details,
+          status: 'Nova'
+        };
+
+        const existing = JSON.parse(localStorage.getItem('pw_proposals') || '[]');
+        existing.unshift(proposalData);
+        localStorage.setItem('pw_proposals', JSON.stringify(existing));
+
         document.getElementById('summaryName').innerText = name;
         document.getElementById('summaryContact').innerText = contact;
         document.getElementById('summaryType').innerText = projectType;
