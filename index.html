@@ -483,49 +483,89 @@
             <a href="mailto:contato@projectweb.com.br" class="channel-btn">
               <i data-lucide="mail"></i> contato@projectweb.com.br
             </a>
-            <a href="https://ig.me/m/projectweb" target="_blank" class="channel-btn">
-              <i data-lucide="instagram"></i> Enviar Mensagem no Instagram
+            <a href="https://ig.me/m/projectweb.sites" target="_blank" class="channel-btn">
+              <i data-lucide="instagram"></i> @projectweb.sites
             </a>
           </div>
         </div>
 
         <div class="form-card">
-          <h3 class="form-headline">Solicitar Proposta Gratuita</h3>
-          
-          <form id="quoteForm">
-            <div class="field-group">
-              <label for="clientName">Seu Nome ou da sua Empresa</label>
-              <input type="text" id="clientName" required placeholder="Ex: Ana Maria / Souza Consultoria">
+          <div id="formInputView">
+            <h3 class="form-headline">Solicitar Proposta Gratuita</h3>
+            
+            <form id="quoteForm">
+              <div class="field-group">
+                <label for="clientName">Seu Nome ou da sua Empresa</label>
+                <input type="text" id="clientName" required placeholder="Ex: Ana Maria / Souza Consultoria">
+              </div>
+
+              <div class="field-group">
+                <label for="clientContact">Seu @ do Instagram ou E-mail para Retorno</label>
+                <input type="text" id="clientContact" required placeholder="Ex: @suaempresa ou ana@empresa.com">
+              </div>
+
+              <div class="field-group">
+                <label for="projectType">Do que você precisa?</label>
+                <select id="projectType" required>
+                  <option value="" disabled selected>Selecione uma opção</option>
+                  <option value="Landing Page de Alta Conversão">Página de Vendas / Landing Page</option>
+                  <option value="Site Completo Institucional">Site Completo para minha Empresa</option>
+                  <option value="Loja Virtual / E-commerce">Loja Virtual / Catálogo Online</option>
+                  <option value="Modernização de Site Atual">Modernizar meu Site Atual</option>
+                  <option value="Consultoria / Orientações">Ainda não sei, quero orientações</option>
+                </select>
+              </div>
+
+              <div class="field-group">
+                <label for="projectDetails">Conte brevemente sobre sua ideia ou objetivo</label>
+                <textarea id="projectDetails" rows="4" placeholder="Ex: Quero um site para divulgar meus serviços e receber clientes pelo Instagram..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-lime btn-block" id="submitBtn">
+                <span id="btnLabel">Enviar Pedido de Proposta</span>
+                <i data-lucide="send"></i>
+              </button>
+            </form>
+          </div>
+
+          <div id="formSummaryView" style="display: none;">
+            <div style="display: inline-flex; align-items: center; gap: 8px; color: var(--color-lime); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; margin-bottom: 12px;">
+              <i data-lucide="check-circle-2" style="width: 18px; height: 18px;"></i> Proposta Registrada com Sucesso
+            </div>
+            <h3 class="form-headline" style="margin-bottom: 16px;">Informações Enviadas para Contato</h3>
+            <p style="color: #94a3b8; font-size: 0.92rem; margin-bottom: 22px;">
+              Seus dados foram salvos com segurança. Você também pode enviar os dados diretamente para o Direct do nosso Instagram oficial:
+            </p>
+
+            <div style="background: #0d1016; border: 1px solid var(--border-card); border-radius: 14px; padding: 20px; margin-bottom: 24px; text-align: left; display: flex; flex-direction: column; gap: 12px; font-size: 0.92rem;">
+              <div>
+                <span style="color: #64748b; font-size: 0.8rem; display: block; font-weight: 600;">NOME / EMPRESA</span>
+                <strong id="summaryName" style="color: #fff;">-</strong>
+              </div>
+              <div>
+                <span style="color: #64748b; font-size: 0.8rem; display: block; font-weight: 600;">CONTATO INFORMADO</span>
+                <strong id="summaryContact" style="color: var(--color-lime);">-</strong>
+              </div>
+              <div>
+                <span style="color: #64748b; font-size: 0.8rem; display: block; font-weight: 600;">TIPO DE PROJETO</span>
+                <strong id="summaryType" style="color: #fff;">-</strong>
+              </div>
+              <div>
+                <span style="color: #64748b; font-size: 0.8rem; display: block; font-weight: 600;">DETALHES / OBJETIVO</span>
+                <p id="summaryDetails" style="color: #cbd5e1; margin-top: 2px; font-size: 0.88rem; line-height: 1.5;">-</p>
+              </div>
             </div>
 
-            <div class="field-group">
-              <label for="clientContact">Seu @ do Instagram ou E-mail para Retorno</label>
-              <input type="text" id="clientContact" required placeholder="Ex: @suaempresa ou ana@empresa.com">
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+              <a href="https://ig.me/m/projectweb.sites" target="_blank" class="btn btn-lime" style="flex: 1; text-align: center; justify-content: center;">
+                <i data-lucide="instagram"></i>
+                <span>Abrir Direct @projectweb.sites</span>
+              </a>
+              <button type="button" class="btn btn-glass" id="btnNewProposal" style="font-size: 0.88rem;">
+                Enviar Outra Proposta
+              </button>
             </div>
-
-            <div class="field-group">
-              <label for="projectType">Do que você precisa?</label>
-              <select id="projectType" required>
-                <option value="" disabled selected>Selecione uma opção</option>
-                <option value="landing">Página de Vendas / Landing Page</option>
-                <option value="institucional">Site Completo para minha Empresa</option>
-                <option value="loja">Loja Virtual / Catálogo Online</option>
-                <option value="redesign">Modernizar meu Site Atual</option>
-                <option value="duvidas">Ainda não sei, quero orientações</option>
-              </select>
-            </div>
-
-            <div class="field-group">
-              <label for="projectDetails">Conte brevemente sobre sua ideia ou objetivo</label>
-              <textarea id="projectDetails" rows="4" placeholder="Ex: Quero um site para divulgar meus serviços e receber clientes pelo Instagram..."></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-lime btn-block" id="submitBtn">
-              <span id="btnLabel">Enviar Pedido de Proposta</span>
-              <i data-lucide="send"></i>
-            </button>
-            <div class="form-notice" id="formNotice"></div>
-          </form>
+          </div>
         </div>
       </div>
     </section>

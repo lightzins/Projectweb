@@ -44,33 +44,48 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const quoteForm = document.getElementById('quoteForm');
-  const formNotice = document.getElementById('formNotice');
+  const formInputView = document.getElementById('formInputView');
+  const formSummaryView = document.getElementById('formSummaryView');
+  const btnNewProposal = document.getElementById('btnNewProposal');
   const submitBtn = document.getElementById('submitBtn');
   const btnLabel = document.getElementById('btnLabel');
 
-  if (quoteForm) {
+  if (quoteForm && formInputView && formSummaryView) {
     quoteForm.addEventListener('submit', (e) => {
       e.preventDefault();
 
+      const name = document.getElementById('clientName').value;
+      const contact = document.getElementById('clientContact').value;
+      const projectType = document.getElementById('projectType').value;
+      const details = document.getElementById('projectDetails').value || 'Não informado';
+
       const originalText = btnLabel.innerText;
-      btnLabel.innerText = 'Enviando com segurança...';
+      btnLabel.innerText = 'Registrando proposta...';
       submitBtn.style.opacity = '0.75';
       submitBtn.disabled = true;
 
       setTimeout(() => {
-        quoteForm.reset();
+        document.getElementById('summaryName').innerText = name;
+        document.getElementById('summaryContact').innerText = contact;
+        document.getElementById('summaryType').innerText = projectType;
+        document.getElementById('summaryDetails').innerText = details;
+
+        formInputView.style.display = 'none';
+        formSummaryView.style.display = 'block';
+
         btnLabel.innerText = originalText;
         submitBtn.style.opacity = '1';
         submitBtn.disabled = false;
-
-        formNotice.className = 'form-notice success';
-        formNotice.innerHTML = '<strong>Mensagem enviada com sucesso!</strong> Entraremos em contato em até 4 horas úteis com sua proposta personalizada.';
-
-        setTimeout(() => {
-          formNotice.style.display = 'none';
-        }, 7000);
-      }, 1100);
+        quoteForm.reset();
+      }, 700);
     });
+
+    if (btnNewProposal) {
+      btnNewProposal.addEventListener('click', () => {
+        formSummaryView.style.display = 'none';
+        formInputView.style.display = 'block';
+      });
+    }
   }
 
   window.addEventListener('scroll', () => {
