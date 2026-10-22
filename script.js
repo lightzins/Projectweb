@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('summaryDetails').innerText = details;
 
         const waText = encodeURIComponent(`Olá Project Web! Acabei de enviar uma proposta pelo site:\n\n*Nome:* ${name}\n*Contato:* ${contact}\n*Tipo de Projeto:* ${projectType}\n*Detalhes:* ${details}`);
-        const waUrl = `https://wa.me/5521981436672?text=${waText}`;
+        const waUrl = `https://wa.me/5521967075858?text=${waText}`;
 
         const btnSendWhatsApp = document.getElementById('btnSendWhatsApp');
         if (btnSendWhatsApp) {
