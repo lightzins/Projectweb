@@ -13,6 +13,34 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
+  <div id="introModal" class="intro-overlay">
+    <div class="intro-container">
+      <div class="intro-header">
+        <div class="intro-brand">
+          <img src="logo.png" alt="project web logo">
+          <span>project <strong>web</strong></span>
+        </div>
+        <button id="skipIntroBtn" class="intro-skip-btn" aria-label="Entrar no site">
+          <span>Pular</span>
+          <i data-lucide="arrow-right"></i>
+        </button>
+      </div>
+      <div class="intro-video-wrapper">
+        <video id="introVideo" playsinline autoplay muted preload="auto">
+          <source src="intro.mp4" type="video/mp4">
+          <source src="video entrada do site.mp4" type="video/mp4">
+          Seu navegador não suporta a reprodução de vídeo.
+        </video>
+        <div class="intro-controls">
+          <button id="introAudioToggle" class="intro-control-btn" aria-label="Ativar/Desativar som">
+            <i data-lucide="volume-x" id="introAudioIcon"></i>
+            <span id="introAudioLabel">Ativar Som</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <header class="navbar">
     <div class="container nav-container">
       <a href="#" class="brand-logo">
