@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const introAudioToggle = document.getElementById('introAudioToggle');
   const introAudioIcon = document.getElementById('introAudioIcon');
   const introAudioLabel = document.getElementById('introAudioLabel');
-  const introTapToPlay = document.getElementById('introTapToPlay');
 
   const isMobile = window.innerWidth <= 768;
 
@@ -32,47 +31,42 @@ document.addEventListener('DOMContentLoaded', () => {
     introVideo.muted = false;
     introVideo.volume = 1.0;
 
-    const startPlaybackWithSound = () => {
+    const playWithAudio = () => {
       introVideo.muted = false;
-      const playPromise = introVideo.play();
-      if (playPromise !== undefined) {
-        playPromise.then(() => {
-          if (introTapToPlay) {
-            introTapToPlay.classList.add('tap-hidden');
-          }
+      const promise = introVideo.play();
+      if (promise !== undefined) {
+        promise.then(() => {
           if (introAudioLabel) introAudioLabel.innerText = 'Som Ativado';
           if (introAudioIcon) introAudioIcon.setAttribute('data-lucide', 'volume-2');
           if (window.lucide) window.lucide.createIcons();
         }).catch(() => {
           introVideo.muted = true;
-          introVideo.play().then(() => {
-            if (introTapToPlay) {
-              introTapToPlay.classList.remove('tap-hidden');
-            }
-          }).catch(() => {});
+          introVideo.play().catch(() => {});
+          
+          const enableAudioOnGesture = () => {
+            introVideo.muted = false;
+            introVideo.play().catch(() => {});
+            if (introAudioLabel) introAudioLabel.innerText = 'Som Ativado';
+            if (introAudioIcon) introAudioIcon.setAttribute('data-lucide', 'volume-2');
+            if (window.lucide) window.lucide.createIcons();
+            document.removeEventListener('touchstart', enableAudioOnGesture);
+            document.removeEventListener('click', enableAudioOnGesture);
+          };
+          document.addEventListener('touchstart', enableAudioOnGesture, { once: true });
+          document.addEventListener('click', enableAudioOnGesture, { once: true });
         });
       }
     };
 
-    startPlaybackWithSound();
-
-    if (introTapToPlay) {
-      introTapToPlay.addEventListener('click', () => {
-        introVideo.muted = false;
-        introVideo.play();
-        introTapToPlay.classList.add('tap-hidden');
-        if (introAudioLabel) introAudioLabel.innerText = 'Som Ativado';
-        if (introAudioIcon) introAudioIcon.setAttribute('data-lucide', 'volume-2');
-        if (window.lucide) window.lucide.createIcons();
-      });
-    }
+    playWithAudio();
 
     introVideo.addEventListener('ended', () => {
-      setTimeout(closeIntro, 400);
+      setTimeout(closeIntro, 350);
     });
 
     if (introAudioToggle) {
-      introAudioToggle.addEventListener('click', () => {
+      introAudioToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
         introVideo.muted = !introVideo.muted;
         if (introVideo.muted) {
           introAudioLabel.innerText = 'Ativar Som';
