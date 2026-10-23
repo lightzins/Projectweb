@@ -1,10 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const introModal = document.getElementById('introModal');
   const introVideo = document.getElementById('introVideo');
-  const skipIntroBtn = document.getElementById('skipIntroBtn');
-  const introAudioToggle = document.getElementById('introAudioToggle');
-  const introAudioIcon = document.getElementById('introAudioIcon');
-  const introAudioLabel = document.getElementById('introAudioLabel');
 
   const isMobile = window.innerWidth <= 768;
 
@@ -24,60 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
       introVideo.pause();
     }
   } else if (introModal && introVideo) {
-    if (skipIntroBtn) {
-      skipIntroBtn.addEventListener('click', closeIntro);
-    }
-
-    introVideo.muted = false;
-    introVideo.volume = 1.0;
-
-    const playWithAudio = () => {
-      introVideo.muted = false;
-      const promise = introVideo.play();
-      if (promise !== undefined) {
-        promise.then(() => {
-          if (introAudioLabel) introAudioLabel.innerText = 'Som Ativado';
-          if (introAudioIcon) introAudioIcon.setAttribute('data-lucide', 'volume-2');
-          if (window.lucide) window.lucide.createIcons();
-        }).catch(() => {
-          introVideo.muted = true;
-          introVideo.play().catch(() => {});
-          
-          const enableAudioOnGesture = () => {
-            introVideo.muted = false;
-            introVideo.play().catch(() => {});
-            if (introAudioLabel) introAudioLabel.innerText = 'Som Ativado';
-            if (introAudioIcon) introAudioIcon.setAttribute('data-lucide', 'volume-2');
-            if (window.lucide) window.lucide.createIcons();
-            document.removeEventListener('touchstart', enableAudioOnGesture);
-            document.removeEventListener('click', enableAudioOnGesture);
-          };
-          document.addEventListener('touchstart', enableAudioOnGesture, { once: true });
-          document.addEventListener('click', enableAudioOnGesture, { once: true });
-        });
-      }
-    };
-
-    playWithAudio();
+    introVideo.muted = true;
+    introVideo.play().catch(() => {});
 
     introVideo.addEventListener('ended', () => {
-      setTimeout(closeIntro, 350);
+      setTimeout(closeIntro, 300);
     });
-
-    if (introAudioToggle) {
-      introAudioToggle.addEventListener('click', (e) => {
-        e.stopPropagation();
-        introVideo.muted = !introVideo.muted;
-        if (introVideo.muted) {
-          introAudioLabel.innerText = 'Ativar Som';
-          if (introAudioIcon) introAudioIcon.setAttribute('data-lucide', 'volume-x');
-        } else {
-          introAudioLabel.innerText = 'Som Ativado';
-          if (introAudioIcon) introAudioIcon.setAttribute('data-lucide', 'volume-2');
-        }
-        if (window.lucide) window.lucide.createIcons();
-      });
-    }
   }
 
   const mobileToggle = document.getElementById('mobileToggle');
