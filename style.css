@@ -1646,27 +1646,34 @@ body {
   }
 }
 
-/* Intro Overlay */
+/* Intro Overlay - Exibido apenas em dispositivos Mobile */
 .intro-overlay {
   position: fixed;
   inset: 0;
   z-index: 99999;
-  background: rgba(6, 8, 12, 0.95);
+  background: rgba(6, 8, 12, 0.96);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: 20px;
   opacity: 1;
   visibility: visible;
   transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.6s ease;
 }
 
+@media (max-width: 768px) {
+  .intro-overlay {
+    display: flex;
+  }
+}
+
 .intro-overlay.intro-hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  display: none !important;
 }
 
 .intro-container {
@@ -1783,4 +1790,42 @@ body {
   background: rgba(184, 240, 27, 0.25);
   border-color: var(--color-lime);
   color: var(--color-lime);
+}
+
+.intro-tap-prompt {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  transition: var(--transition);
+  z-index: 10;
+}
+
+.intro-tap-prompt.tap-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.tap-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(8, 10, 14, 0.88);
+  border: 1px solid var(--border-lime);
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  font-weight: 700;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 25px var(--color-lime-glow);
+  animation: pulseTap 1.8s infinite ease-in-out;
+}
+
+@keyframes pulseTap {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
 }

@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const introAudioToggle = document.getElementById('introAudioToggle');
   const introAudioIcon = document.getElementById('introAudioIcon');
   const introAudioLabel = document.getElementById('introAudioLabel');
+  const introTapToPlay = document.getElementById('introTapToPlay');
+
+  const isMobile = window.innerWidth <= 768;
 
   const closeIntro = () => {
     if (!introModal || introModal.classList.contains('intro-hidden')) return;
@@ -14,36 +17,71 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  if (introModal) {
+  if (!isMobile) {
+    if (introModal) {
+      introModal.classList.add('intro-hidden');
+    }
+    if (introVideo) {
+      introVideo.pause();
+    }
+  } else if (introModal && introVideo) {
     if (skipIntroBtn) {
       skipIntroBtn.addEventListener('click', closeIntro);
     }
 
-    if (introVideo) {
-      introVideo.play().catch(() => {});
+    introVideo.muted = false;
+    introVideo.volume = 1.0;
 
-      introVideo.addEventListener('ended', () => {
-        setTimeout(closeIntro, 400);
+    const startPlaybackWithSound = () => {
+      introVideo.muted = false;
+      const playPromise = introVideo.play();
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          if (introTapToPlay) {
+            introTapToPlay.classList.add('tap-hidden');
+          }
+          if (introAudioLabel) introAudioLabel.innerText = 'Som Ativado';
+          if (introAudioIcon) introAudioIcon.setAttribute('data-lucide', 'volume-2');
+          if (window.lucide) window.lucide.createIcons();
+        }).catch(() => {
+          introVideo.muted = true;
+          introVideo.play().then(() => {
+            if (introTapToPlay) {
+              introTapToPlay.classList.remove('tap-hidden');
+            }
+          }).catch(() => {});
+        });
+      }
+    };
+
+    startPlaybackWithSound();
+
+    if (introTapToPlay) {
+      introTapToPlay.addEventListener('click', () => {
+        introVideo.muted = false;
+        introVideo.play();
+        introTapToPlay.classList.add('tap-hidden');
+        if (introAudioLabel) introAudioLabel.innerText = 'Som Ativado';
+        if (introAudioIcon) introAudioIcon.setAttribute('data-lucide', 'volume-2');
+        if (window.lucide) window.lucide.createIcons();
       });
     }
 
-    if (introAudioToggle && introVideo) {
+    introVideo.addEventListener('ended', () => {
+      setTimeout(closeIntro, 400);
+    });
+
+    if (introAudioToggle) {
       introAudioToggle.addEventListener('click', () => {
         introVideo.muted = !introVideo.muted;
         if (introVideo.muted) {
           introAudioLabel.innerText = 'Ativar Som';
-          if (introAudioIcon) {
-            introAudioIcon.setAttribute('data-lucide', 'volume-x');
-          }
+          if (introAudioIcon) introAudioIcon.setAttribute('data-lucide', 'volume-x');
         } else {
-          introAudioLabel.innerText = 'Desativar Som';
-          if (introAudioIcon) {
-            introAudioIcon.setAttribute('data-lucide', 'volume-2');
-          }
+          introAudioLabel.innerText = 'Som Ativado';
+          if (introAudioIcon) introAudioIcon.setAttribute('data-lucide', 'volume-2');
         }
-        if (window.lucide) {
-          window.lucide.createIcons();
-        }
+        if (window.lucide) window.lucide.createIcons();
       });
     }
   }

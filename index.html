@@ -26,15 +26,21 @@
         </button>
       </div>
       <div class="intro-video-wrapper">
-        <video id="introVideo" playsinline autoplay muted preload="auto">
+        <video id="introVideo" playsinline preload="auto">
           <source src="intro.mp4" type="video/mp4">
           <source src="video entrada do site.mp4" type="video/mp4">
           Seu navegador não suporta a reprodução de vídeo.
         </video>
+        <div id="introTapToPlay" class="intro-tap-prompt">
+          <div class="tap-pill">
+            <i data-lucide="play" style="fill: var(--color-lime); width: 18px; height: 18px;"></i>
+            <span>Toque para assistir com som</span>
+          </div>
+        </div>
         <div class="intro-controls">
           <button id="introAudioToggle" class="intro-control-btn" aria-label="Ativar/Desativar som">
-            <i data-lucide="volume-x" id="introAudioIcon"></i>
-            <span id="introAudioLabel">Ativar Som</span>
+            <i data-lucide="volume-2" id="introAudioIcon"></i>
+            <span id="introAudioLabel">Som Ativado</span>
           </button>
         </div>
       </div>
